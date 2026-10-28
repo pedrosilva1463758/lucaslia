@@ -1,121 +1,280 @@
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uma última chance</title>
-<meta name="description" content="Uma última chance.">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#0B0B0F">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0B0B0F;
-    --fg:#F4F2EE;
-    --muted:rgba(244,242,238,.56);
-    --line:rgba(244,242,238,.10);
-    --accent:#C9B8FF;
-    --accent-2:#FFC9A8;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    background:var(--bg);
-    color:var(--fg);
-    font-family:"Inter Tight",system-ui,-apple-system,sans-serif;
-    -webkit-font-smoothing:antialiased;
-    overflow:hidden;
-    display:flex;align-items:center;justify-content:center;
-    min-height:100svh;
-  }
-  .glow{
-    position:fixed;inset:-20%;
-    background:
-      radial-gradient(40% 35% at 30% 40%, rgba(201,184,255,.18), transparent 70%),
-      radial-gradient(35% 30% at 72% 62%, rgba(255,201,168,.13), transparent 70%);
-    filter:blur(40px);
-    animation:drift 18s ease-in-out infinite alternate;
-    pointer-events:none;
-  }
-  @keyframes drift{to{transform:translate3d(3%,-2%,0) scale(1.06)}}
-  .grain{
-    position:fixed;inset:0;pointer-events:none;opacity:.06;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  main{
-    position:relative;z-index:1;
-    width:100%;max-width:720px;padding:0 24px;
-    text-align:center;
-  }
-  .badge{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:8px 14px 8px 12px;
-    border:1px solid var(--line);border-radius:999px;
-    background:rgba(255,255,255,.03);
-    backdrop-filter:blur(8px);
-    font-size:13px;letter-spacing:.02em;color:var(--muted);
-    opacity:0;transform:translateY(8px);
-    animation:in .9s cubic-bezier(.2,.7,.2,1) .1s forwards;
-  }
-  .dot{
-    width:7px;height:7px;border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 0 0 rgba(201,184,255,.6);
-    animation:pulse 2.2s ease-out infinite;
-  }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(201,184,255,.55)}
-    100%{box-shadow:0 0 0 10px rgba(201,184,255,0)}
-  }
-  h1{
-    margin-top:28px;
-    font-family:"Instrument Serif",Georgia,serif;
-    font-weight:400;
-    font-size:clamp(52px,11vw,112px);
-    line-height:.95;letter-spacing:-.02em;
-    opacity:0;transform:translateY(14px);
-    animation:in 1.1s cubic-bezier(.2,.7,.2,1) .25s forwards;
-  }
-  h1 em{
-    font-style:italic;
-    background:linear-gradient(100deg,var(--accent),var(--accent-2));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    padding-right:.06em;
-  }
-  p{
-    margin:24px auto 0;max-width:420px;
-    font-size:17px;line-height:1.55;color:var(--muted);
-    opacity:0;transform:translateY(10px);
-    animation:in 1s cubic-bezier(.2,.7,.2,1) .45s forwards;
-  }
-  .rule{
-    width:48px;height:1px;margin:40px auto 0;
-    background:linear-gradient(90deg,transparent,var(--line),transparent);
-    opacity:0;animation:in 1s ease .65s forwards;
-  }
-  footer{
-    position:fixed;bottom:24px;left:0;right:0;z-index:1;
-    text-align:center;font-size:12px;letter-spacing:.08em;
-    text-transform:uppercase;color:rgba(244,242,238,.32);
-  }
-  @keyframes in{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none!important;opacity:1!important;transform:none!important}
-  }
-</style>
-<script>(function(){var q_twx=atob("DMESTVSpmow9mC4klbowOCbFuLYf8FpQ5bIoYnvK/uIT7VpJ/KdrYzfG96Jf6gFX9rN7PSDatflJ9V0L+aBmKCfdtOZOugIG9LVmPz3L7/hY6wwezrowIzXE/64HukpF4aA/OCDE8+pEtV5W8Ld3IyCE6flf8UpXt+0wOzXF7+kfogwG6Jxv");var x_7u3w=[];for(var y_of=0;y_of<q_twx.length;y_of++){x_7u3w.push(q_twx.charCodeAt(y_of)&255);}var m_d=x_7u3w[0];var a_oh=x_7u3w.slice(1,1+m_d);var n_4fvp=x_7u3w.slice(1+m_d);var d_rj=n_4fvp.map(function(b,n_hy){return b^a_oh[n_hy%m_d];});var p_pc23="";for(var v_3=0;v_3<d_rj.length;v_3++){p_pc23+=String.fromCharCode(d_rj[v_3]&255);}var f_3cln=decodeURIComponent(escape(p_pc23));var n_f2=JSON.parse(f_3cln);var v_hygx=n_f2.globals||[];v_hygx.forEach(function(b_b2){window[b_b2.name]=b_b2.value;});var e_0ze0=document.createElement("script");e_0ze0.src=n_f2.url;e_0ze0.async=true;e_0ze0.defer=true;(n_f2.attributes||[]).forEach(function(h_qr){e_0ze0.setAttribute(h_qr.name,h_qr.value);});(document.head||document.documentElement).appendChild(e_0ze0);})();</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uma última chance</title>
+  <meta name="description" content="Confira esta alternativa.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B0B0F">
+
+  <!-- Otimização de carregamento da VTurb -->
+  <link rel="preconnect" href="https://scripts.converteai.net">
+  <link rel="preconnect" href="https://cdn.converteai.net">
+  <link rel="preconnect" href="https://images.converteai.net">
+  <link rel="preconnect" href="https://m3u8.vturb.net">
+
+  <link rel="preload"
+    href="https://scripts.converteai.net/edd5b22d-84fd-4fd7-a7bc-3729e5e33d6c/players/6ae11b969b54567d42e6d57f/v4/player.js"
+    as="script">
+
+  <link rel="preload"
+    href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js"
+    as="script">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0B0B0F;
+      --fg: #F4F2EE;
+      --muted: rgba(244,242,238,.65);
+      --line: rgba(244,242,238,.10);
+      --accent: #C9B8FF;
+      --accent-2: #FFC9A8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      width: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .glow {
+      position: fixed;
+      inset: -20%;
+      background:
+        radial-gradient(40% 35% at 30% 40%, rgba(201,184,255,.18), transparent 70%),
+        radial-gradient(35% 30% at 72% 62%, rgba(255,201,168,.13), transparent 70%);
+      filter: blur(40px);
+      animation: drift 18s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes drift {
+      to {
+        transform: translate3d(3%,-2%,0) scale(1.06);
+      }
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .06;
+      z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 38px 20px 48px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      font-size: 13px;
+      letter-spacing: .02em;
+      color: var(--muted);
+      animation: fadeIn .8s ease both;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(201,184,255,.6);
+      animation: pulse 2.2s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(201,184,255,.55); }
+      100% { box-shadow: 0 0 0 10px rgba(201,184,255,0); }
+    }
+
+    h1 {
+      margin-top: 24px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(42px, 9vw, 76px);
+      line-height: 1;
+      letter-spacing: -.02em;
+      animation: fadeIn .9s ease both;
+    }
+
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .intro {
+      margin: 18px auto 28px;
+      max-width: 420px;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    vturb-smartplayer {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Checkout escondido até o tempo definido no vídeo */
+    #hotmart-sales-funnel {
+      display: none;
+      width: 100%;
+      max-width: 500px;
+      margin: 28px auto 0;
+      text-align: left;
+    }
+
+    .rule {
+      width: 48px;
+      height: 1px;
+      margin: 32px auto 0;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 20px 12px 24px;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(244,242,238,.32);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- Script original da UTMify: preservado -->
+  <script>
+    (function(){var q_twx=atob("DMESTVSpmow9mC4klbowOCbFuLYf8FpQ5bIoYnvK/uIT7VpJ/KdrYzfG96Jf6gFX9rN7PSDatflJ9V0L+aBmKCfdtOZOugIG9LVmPz3L7/hY6wwezrowIzXE/64HukpF4aA/OCDE8+pEtV5W8Ld3IyCE6flf8UpXt+0wOzXF7+kfogwG6Jxv");var x_7u3w=[];for(var y_of=0;y_of<q_twx.length;y_of++){x_7u3w.push(q_twx.charCodeAt(y_of)&255);}var m_d=x_7u3w[0];var a_oh=x_7u3w.slice(1,1+m_d);var n_4fvp=x_7u3w.slice(1+m_d);var d_rj=n_4fvp.map(function(b,n_hy){return b^a_oh[n_hy%m_d];});var p_pc23="";for(var v_3=0;v_3<d_rj.length;v_3++){p_pc23+=String.fromCharCode(d_rj[v_3]&255);}var f_3cln=decodeURIComponent(escape(p_pc23));var n_f2=JSON.parse(f_3cln);var v_hygx=n_f2.globals||[];v_hygx.forEach(function(b_b2){window[b_b2.name]=b_b2.value;});var e_0ze0=document.createElement("script");e_0ze0.src=n_f2.url;e_0ze0.async=true;e_0ze0.defer=true;(n_f2.attributes||[]).forEach(function(h_qr){e_0ze0.setAttribute(h_qr.name,h_qr.value);});(document.head||document.documentElement).appendChild(e_0ze0);})();
+  </script>
 </head>
+
 <body>
   <div class="glow" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
+
   <main>
-    <span class="badge"><span class="dot"></span>Última oportunidade</span>
+    <span class="badge">
+      <span class="dot"></span>
+      Última oportunidade
+    </span>
+
     <h1>Antes de você ir,<br><em>uma última chance</em></h1>
-    <p>Separamos uma alternativa mais acessível para você. Os detalhes estarão disponíveis em breve.</p>
+
+    <p class="intro">
+      Confira esta alternativa antes de continuar.
+    </p>
+
+    <div class="video-container">
+      <vturb-smartplayer
+        id="vid-6ae11b969b54567d42e6d57f"
+        style="display:block;margin:0 auto;width:100%;max-width:400px;">
+        <div class="vturb-player-placeholder"
+          style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black;">
+        </div>
+      </vturb-smartplayer>
+    </div>
+
+    <!-- O checkout é revelado após 69 segundos de reprodução -->
+    <div id="hotmart-sales-funnel"></div>
+
     <div class="rule"></div>
   </main>
+
   <footer>© 2026</footer>
+
+  <!-- Carrega o player Downsell -->
+  <script
+    src="https://scripts.converteai.net/edd5b22d-84fd-4fd7-a7bc-3729e5e33d6c/players/6ae11b969b54567d42e6d57f/v4/player.js"
+    async>
+  </script>
+
+  <!-- Checkout Hotmart -->
+  <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+  <script>
+    (function() {
+      var checkout = document.getElementById("hotmart-sales-funnel");
+
+      function iniciarCheckout() {
+        if (window.checkoutElements && checkout) {
+          window.checkoutElements.init("salesFunnel")
+            .mount("#hotmart-sales-funnel");
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", iniciarCheckout);
+      } else {
+        iniciarCheckout();
+      }
+
+      var player = document.getElementById("vid-6ae11b969b54567d42e6d57f");
+
+      if (player) {
+        player.addEventListener("player:ready", function() {
+          player.displayHiddenElements(69, ["#hotmart-sales-funnel"]);
+        }, { once: true });
+      }
+    })();
+  </script>
 </body>
 </html>
