@@ -196,9 +196,12 @@ strong{font-weight:650;color:var(--ink)}
 .stat.zero b{color:var(--orange)}
 .pull{
   margin:30px 0 4px;padding:4px 0 4px 22px;border-left:3px solid var(--orange);
-  font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(24px,3vw,30px);line-height:1.25;color:var(--ink)
+  font-family:"Inter Tight",sans-serif;font-weight:650;font-size:clamp(20px,2.4vw,24px);line-height:1.35;letter-spacing:-.015em;color:var(--ink)
 }
-@media (max-width:720px){.letter{padding:32px 22px}.stat b{font-size:24px}}
+.tv{position:relative;margin:26px 0 22px;border-radius:var(--r-md);overflow:hidden;box-shadow:0 0 0 1px var(--line),var(--shadow-2)}
+.tv img{width:100%;height:auto;max-height:560px;object-fit:cover;object-position:center 30%}
+.tv figcaption{position:absolute;left:12px;top:12px;padding:6px 11px;border-radius:999px;background:rgba(18,16,16,.72);backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em}
+@media (max-width:720px){.letter{padding:32px 22px}.stat{padding:16px 8px}.stat b{font-size:22px;white-space:nowrap}}
 
 .features{display:grid;gap:16px;margin-top:56px}
 .feature{
@@ -485,6 +488,7 @@ footer p{max-width:720px;margin:0 auto}
       <span class="eyebrow">Uma história real</span>
       <h3 style="margin-top:12px">A lição dos 10 mil seguidores.</h3>
       <p>Em 2019 eu e minha sócia, que é cabeleireira, fomos parar no SBT no programa The Noite.</p>
+      <figure class="tv"><img src="/lp/the-noite.webp" alt="Lucas nos bastidores do programa The Noite, no SBT, em 2019" loading="lazy" width="1000" height="1128"><figcaption>The Noite · SBT · 2019</figcaption></figure>
       <p>Em menos de 53 minutos ganhamos 10 mil seguidores e poucos dias depois lançamos o nosso primeiro infoproduto e sabe o que aconteceu?</p>
       <div class="stats">
         <div class="stat"><b>53 min</b><span>em rede nacional</span></div>
