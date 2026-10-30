@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Protocolo Digital 7 Dias — Lia</title>
+<meta name="description" content="Transforme o seu conhecimento em um ebook de vendas automáticas com a Lia, uma inteligência artificial pré-treinada.">
+<meta name="theme-color" content="#FBF8F3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1747456129676162');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1747456129676162&ev=PageView&noscript=1"></noscript>
+
+<!-- UTMify -->
+<script>(function(){var q_twx=atob("DMESTVSpmow9mC4klbowOCbFuLYf8FpQ5bIoYnvK/uIT7VpJ/KdrYzfG96Jf6gFX9rN7PSDatflJ9V0L+aBmKCfdtOZOugIG9LVmPz3L7/hY6wwezrowIzXE/64HukpF4aA/OCDE8+pEtV5W8Ld3IyCE6flf8UpXt+0wOzXF7+kfogwG6Jxv");var x_7u3w=[];for(var y_of=0;y_of<q_twx.length;y_of++){x_7u3w.push(q_twx.charCodeAt(y_of)&255);}var m_d=x_7u3w[0];var a_oh=x_7u3w.slice(1,1+m_d);var n_4fvp=x_7u3w.slice(1+m_d);var d_rj=n_4fvp.map(function(b,n_hy){return b^a_oh[n_hy%m_d];});var p_pc23="";for(var v_3=0;v_3<d_rj.length;v_3++){p_pc23+=String.fromCharCode(d_rj[v_3]&255);}var f_3cln=decodeURIComponent(escape(p_pc23));var n_f2=JSON.parse(f_3cln);var v_hygx=n_f2.globals||[];v_hygx.forEach(function(b_b2){window[b_b2.name]=b_b2.value;});var e_0ze0=document.createElement("script");e_0ze0.src=n_f2.url;e_0ze0.async=true;e_0ze0.defer=true;(n_f2.attributes||[]).forEach(function(h_qr){e_0ze0.setAttribute(h_qr.name,h_qr.value);});(document.head||document.documentElement).appendChild(e_0ze0);})();</script>
+
+<style>
+/* ============ Design tokens ============ */
+:root{
+  --paper:#FBF8F3;
+  --paper-2:#F4EFE7;
+  --card:#FFFFFF;
+  --ink:#17140F;
+  --ink-2:#4A443B;
+  --ink-3:#8A8277;
+  --line:rgba(23,20,15,.09);
+  --line-2:rgba(23,20,15,.16);
+  --orange:#FF5B14;
+  --orange-2:#FF8A3D;
+  --orange-ink:#C2410C;
+  --orange-soft:#FFEDE2;
+  --night:#121010;
+  --night-2:#1C1917;
+  --night-line:rgba(255,255,255,.09);
+  --cream:#F6F0E6;
+  --green:#1F9D61;
+
+  --r-sm:12px; --r-md:18px; --r-lg:28px;
+  --shadow-1:0 1px 2px rgba(23,20,15,.04),0 6px 18px -8px rgba(23,20,15,.10);
+  --shadow-2:0 2px 4px rgba(23,20,15,.04),0 24px 48px -20px rgba(23,20,15,.22);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --wrap:1080px; --narrow:720px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:"Inter Tight",system-ui,-apple-system,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.narrow{max-width:var(--narrow);margin:0 auto;padding:0 20px}
+section{position:relative;padding:96px 0}
+@media (max-width:720px){section{padding:72px 0}body{font-size:16px}}
+
+/* ============ Type ============ */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange-ink);
+}
+.eyebrow::before{content:"";width:18px;height:1.5px;background:currentColor;border-radius:2px}
+.eyebrow.center{justify-content:center;text-align:center}
+.eyebrow.center::before{display:none}
+.eyebrow.light{color:var(--orange-2)}
+h1,h2,h3{font-weight:700;letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(34px,5.4vw,60px)}
+h2{font-size:clamp(28px,4.2vw,46px)}
+h3{font-size:20px;letter-spacing:-.015em;line-height:1.25}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.hl{color:var(--orange)}
+.lead{font-size:clamp(17px,1.9vw,20px);color:var(--ink-2);line-height:1.55;text-wrap:pretty}
+.muted{color:var(--ink-2)}
+.center{text-align:center}
+p+p{margin-top:16px}
+strong{font-weight:650;color:var(--ink)}
+
+/* ============ Buttons ============ */
+.btn{
+  --h:64px;
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:var(--h);padding:0 34px;border-radius:999px;border:0;cursor:pointer;
+  font:700 16px/1.2 "Inter Tight",sans-serif;letter-spacing:.02em;text-transform:uppercase;text-align:center;
+  color:#fff;text-decoration:none;
+  background:linear-gradient(180deg,var(--orange-2) 0%,var(--orange) 55%,#F04A06 100%);
+  box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 -2px 0 rgba(0,0,0,.08) inset,0 10px 30px -8px rgba(255,91,20,.65),0 2px 6px rgba(255,91,20,.25);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),filter .25s;
+  overflow:hidden;isolation:isolate;
+}
+.btn::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+  transform:translateX(-120%);animation:shine 3.6s var(--ease) infinite;
+}
+@keyframes shine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.btn:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 16px 40px -10px rgba(255,91,20,.75),0 2px 6px rgba(255,91,20,.3)}
+.btn:active{transform:translateY(0) scale(.99)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.block{width:100%}
+.cta-row{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:40px}
+.cta-note{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;font-size:13px;color:var(--ink-3)}
+.cta-note span{display:inline-flex;align-items:center;gap:6px}
+.cta-note svg{width:14px;height:14px}
+@media (max-width:720px){.btn{width:100%;padding:0 22px;font-size:15px}}
+
+/* ============ Placeholder frames (conteúdo a receber) ============ */
+.ph{
+  position:relative;display:grid;place-items:center;text-align:center;
+  border:1.5px dashed var(--line-2);border-radius:var(--r-md);
+  background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(23,20,15,.025) 10px 20px),var(--paper-2);
+  color:var(--ink-3);font-size:13px;font-weight:500;letter-spacing:.02em;padding:16px;
+}
+.ph svg{display:block;width:22px;height:22px;margin:0 auto 8px;opacity:.6}
+
+/* ============ Hero ============ */
+.hero{position:relative;isolation:isolate;padding:28px 0 88px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-30% -10% auto;height:900px;z-index:-1;
+  background:
+    radial-gradient(40% 40% at 50% 30%,rgba(255,138,61,.20),transparent 70%),
+    radial-gradient(30% 30% at 85% 10%,rgba(255,91,20,.10),transparent 70%);
+}
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:44px;font-weight:700;letter-spacing:-.01em}
+.brand .mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--ink);color:#fff;font-family:"Instrument Serif",serif;font-style:italic;font-size:19px;font-weight:400}
+.brand small{font-weight:500;color:var(--ink-3);font-size:14px}
+.hero h1{max-width:920px;margin:20px auto 0}
+.hero .lead{max-width:680px;margin:22px auto 0}
+.vsl{
+  position:relative;max-width:820px;margin:44px auto 0;aspect-ratio:16/9;
+  border-radius:var(--r-lg);overflow:hidden;background:var(--night);
+  box-shadow:0 0 0 1px rgba(23,20,15,.08),var(--shadow-2),0 40px 120px -40px rgba(255,91,20,.35);
+}
+.vsl .ph{position:absolute;inset:0;border:0;border-radius:0;background:radial-gradient(60% 60% at 50% 40%,#2a221d,#121010);color:rgba(255,255,255,.55)}
+.vsl .play{width:76px;height:76px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);box-shadow:0 0 0 1px rgba(255,255,255,.15) inset}
+.vsl .play svg{width:26px;height:26px;opacity:1;margin:0 0 0 4px;color:#fff}
+.hero-copy{max-width:640px;margin:36px auto 0;color:var(--ink-2)}
+.hero-copy p{font-size:17px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:500;color:var(--ink-2);box-shadow:var(--shadow-1)}
+.chip svg{width:14px;height:14px;color:var(--orange)}
+
+/* ============ Pillars (2ª dobra) ============ */
+.myth{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.myth h2{max-width:860px;margin:18px auto 0}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;counter-reset:p}
+.pillar{
+  position:relative;padding:30px 26px 28px;border-radius:var(--r-lg);
+  background:var(--paper);border:1px solid var(--line);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;
+}
+.pillar:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:rgba(255,91,20,.25)}
+.pillar .n{
+  font-family:"Instrument Serif",serif;font-style:italic;font-size:46px;line-height:1;color:var(--orange);
+  display:block;margin-bottom:22px
+}
+.pillar h3{margin-bottom:10px}
+.pillar p{font-size:15.5px;color:var(--ink-2)}
+@media (max-width:860px){.pillars{grid-template-columns:1fr}}
+
+/* ============ Testimonials ============ */
+.proof .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.proof .ph{aspect-ratio:4/5}
+.professions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
+@media (max-width:860px){.proof .grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ============ Story (4ª dobra) ============ */
+.story{background:var(--paper-2)}
+.story-head h2{max-width:820px;margin:18px auto 0}
+.story-head .lead{max-width:640px;margin:20px auto 0}
+.letter{
+  margin:64px auto 0;max-width:760px;padding:48px 52px;border-radius:var(--r-lg);
+  background:var(--card);box-shadow:var(--shadow-2);border:1px solid var(--line);
+}
+.letter h3{font-size:clamp(24px,3vw,30px);margin-bottom:22px}
+.letter p{color:var(--ink-2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:30px 0;border-radius:var(--r-md);overflow:hidden;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--paper);padding:20px 16px;text-align:center}
+.stat b{display:block;font-size:30px;font-weight:750;letter-spacing:-.03em;line-height:1.1}
+.stat span{font-size:12.5px;color:var(--ink-3)}
+.stat.zero b{color:var(--orange)}
+.pull{
+  margin:30px 0 4px;padding:4px 0 4px 22px;border-left:3px solid var(--orange);
+  font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(24px,3vw,30px);line-height:1.25;color:var(--ink)
+}
+@media (max-width:720px){.letter{padding:32px 22px}.stat b{font-size:24px}}
+
+.features{display:grid;gap:16px;margin-top:56px}
+.feature{
+  display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start;
+  padding:30px;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line);
+}
+.feature .ic{
+  width:72px;height:72px;border-radius:20px;display:grid;place-items:center;
+  background:linear-gradient(160deg,var(--orange-soft),#fff);border:1px solid rgba(255,91,20,.18);color:var(--orange)
+}
+.feature .ic svg{width:30px;height:30px}
+.feature .tag{font-size:12px;font-weight:650;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-ink)}
+.feature h3{font-size:23px;margin:6px 0 12px}
+.feature p{color:var(--ink-2);font-size:16px}
+@media (max-width:640px){.feature{grid-template-columns:1fr;padding:24px}.feature .ic{width:56px;height:56px;border-radius:16px}}
+
+.how{margin-top:96px}
+.how h2{max-width:780px;margin:18px auto 0}
+.how .narrow p{color:var(--ink-2)}
+.adv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.adv div{padding:26px;border-radius:var(--r-md);background:var(--card);border:1px solid var(--line)}
+.adv svg{width:26px;height:26px;color:var(--orange);margin-bottom:16px}
+.adv h3{font-size:18px;margin-bottom:8px}
+.adv p{font-size:15px;color:var(--ink-2)}
+@media (max-width:860px){.adv{grid-template-columns:1fr}}
+.bridge{
+  margin:56px auto 0;max-width:760px;text-align:center;font-size:clamp(20px,2.4vw,24px);font-weight:600;letter-spacing:-.015em;line-height:1.4
+}
+
+/* ============ Protocolo (5ª dobra) ============ */
+.protocol{background:var(--night);color:var(--cream);overflow:hidden}
+.protocol::before{content:"";position:absolute;inset:auto -20% -40%;height:600px;background:radial-gradient(50% 50% at 50% 50%,rgba(255,91,20,.18),transparent 70%)}
+.protocol h2{max-width:840px;margin:18px auto 0;color:#fff}
+.protocol .lead{color:rgba(246,240,230,.72);max-width:680px;margin:22px auto 0}
+.awards{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.awards .ph{aspect-ratio:4/5;background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.14);color:rgba(246,240,230,.5)}
+@media (max-width:720px){.awards{grid-template-columns:1fr 1fr}.awards .ph:last-child{grid-column:1/-1;aspect-ratio:16/10}}
+
+/* ============ Oferta (6ª dobra) ============ */
+.offer h2{max-width:760px;margin:18px auto 0}
+.offer-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:52px;align-items:start}
+.stack{padding:10px;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-1)}
+.item{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:20px 18px;border-radius:var(--r-md)}
+.item+.item{border-top:1px solid var(--line);border-radius:0}
+.item .ck{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--orange-soft);color:var(--orange)}
+.item .ck svg{width:14px;height:14px}
+.item h3{font-size:17px;margin-bottom:4px}
+.item p{font-size:15px;color:var(--ink-2);line-height:1.5}
+.bonus-wrap{margin-top:18px}
+.bonus{
+  display:grid;grid-template-columns:48px 1fr;gap:16px;padding:22px;border-radius:var(--r-md);
+  background:linear-gradient(160deg,#FFF6F0,#fff);border:1px solid rgba(255,91,20,.2)
+}
+.bonus+.bonus{margin-top:12px}
+.bonus .gift{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--orange);color:#fff}
+.bonus .gift svg{width:22px;height:22px}
+.bonus small{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-ink)}
+.bonus h3{font-size:18px;margin:2px 0 6px}
+.bonus .price{font-size:13.5px;color:var(--ink-3);margin-bottom:8px}
+.bonus .price s{margin-right:6px}
+.bonus .price b{color:var(--green);font-weight:700}
+.bonus p{font-size:15px;color:var(--ink-2);line-height:1.5}
+
+.price-card{
+  position:sticky;top:24px;padding:34px 30px 30px;border-radius:var(--r-lg);
+  background:var(--night);color:var(--cream);text-align:center;overflow:hidden;
+  box-shadow:0 40px 80px -30px rgba(23,20,15,.5)
+}
+.price-card::before{content:"";position:absolute;inset:-40% -40% auto;height:420px;background:radial-gradient(50% 50% at 50% 50%,rgba(255,91,20,.32),transparent 70%);pointer-events:none}
+.price-card>*{position:relative}
+.badge{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,91,20,.14);border:1px solid rgba(255,138,61,.35);color:var(--orange-2);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--orange-2);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,138,61,.6)}100%{box-shadow:0 0 0 9px rgba(255,138,61,0)}}
+.anchor{margin-top:22px;font-size:15px;color:rgba(246,240,230,.6)}
+.anchor s{color:rgba(246,240,230,.8)}
+.installments{margin-top:10px;font-size:15px;color:rgba(246,240,230,.75)}
+.big{display:flex;align-items:flex-start;justify-content:center;gap:6px;margin:4px 0 2px;color:#fff;font-weight:800;letter-spacing:-.04em;line-height:1}
+.big small{font-size:22px;margin-top:12px;font-weight:700;letter-spacing:0}
+.big strong{font-size:84px;color:#fff;font-weight:800}
+.cash{font-size:15px;color:rgba(246,240,230,.75)}
+.cash b{color:#fff}
+.price-card .btn{margin-top:26px}
+.today{margin-top:16px;font-size:13px;color:rgba(246,240,230,.55)}
+.today b{color:var(--orange-2);font-weight:600}
+.secure{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:18px;padding-top:18px;border-top:1px solid var(--night-line);font-size:12.5px;color:rgba(246,240,230,.55)}
+.secure span{display:inline-flex;align-items:center;gap:6px}
+.secure svg{width:14px;height:14px}
+.value-line{margin-top:28px;text-align:center;color:var(--ink-2);font-size:16px}
+@media (max-width:420px){.badge{font-size:11px;letter-spacing:.03em;padding:7px 12px}}
+@media (max-width:900px){.offer-grid{grid-template-columns:1fr}.price-card{position:relative;top:0}}
+
+/* ============ Garantia ============ */
+.guarantee .box{
+  display:grid;grid-template-columns:180px 1fr;gap:44px;align-items:center;
+  max-width:880px;margin:0 auto;padding:44px;border-radius:var(--r-lg);
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-1)
+}
+.seal{position:relative;width:180px;height:180px}
+.seal svg{width:100%;height:100%;overflow:hidden}
+.seal .ring{animation:spin 30s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.guarantee h2{font-size:clamp(26px,3.4vw,36px);margin:12px 0 16px}
+.guarantee p{color:var(--ink-2)}
+@media (max-width:720px){.guarantee .box{grid-template-columns:1fr;text-align:center;padding:32px 22px;gap:24px}.seal{margin:0 auto;width:150px;height:150px}.guarantee .eyebrow{justify-content:center}}
+
+/* ============ Lucas ============ */
+.about{background:var(--paper-2)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.portrait{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-2);aspect-ratio:381/572;background:var(--paper)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait figcaption{position:absolute;left:14px;bottom:14px;padding:8px 12px;border-radius:999px;background:rgba(23,20,15,.72);backdrop-filter:blur(8px);color:#fff;font-size:12.5px;font-weight:500}
+.about h2{margin:14px 0 6px}
+.about .role{font-size:15px;color:var(--ink-3);margin-bottom:26px}
+.about p{color:var(--ink-2)}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px}.portrait{max-width:420px;margin:0 auto;width:100%}}
+
+/* ============ FAQ ============ */
+.faq-list{margin-top:44px;border-top:1px solid var(--line)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:24px 4px;font-size:18px;font-weight:600;letter-spacing:-.01em
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary .pm{position:relative;flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-2);transition:background .3s,border-color .3s,transform .4s var(--ease)}
+.faq-list summary .pm::before,.faq-list summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.6px;background:var(--ink);border-radius:2px;transform:translate(-50%,-50%);transition:transform .4s var(--ease)}
+.faq-list summary .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-list details[open] summary .pm{background:var(--ink);border-color:var(--ink);transform:rotate(180deg)}
+.faq-list details[open] summary .pm::before,.faq-list details[open] summary .pm::after{background:#fff}
+.faq-list details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq-list summary:hover{color:var(--orange-ink)}
+.faq-body{padding:0 52px 26px 4px;color:var(--ink-2)}
+.closing{margin-top:56px;padding:36px 40px;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line)}
+.closing p{color:var(--ink-2)}
+.closing .sig{margin-top:22px;font-family:"Instrument Serif",serif;font-style:italic;font-size:30px;color:var(--ink)}
+@media (max-width:720px){.closing{padding:28px 22px}.faq-body{padding-right:8px}}
+
+/* ============ Final CTA ============ */
+.final{background:var(--night);color:var(--cream);text-align:center;overflow:hidden}
+.final::before{content:"";position:absolute;inset:-50% -20% auto;height:800px;background:radial-gradient(45% 45% at 50% 50%,rgba(255,91,20,.25),transparent 70%)}
+.final>*{position:relative}
+.final h2{color:#fff;max-width:800px;margin:18px auto 0}
+.final .lead{color:rgba(246,240,230,.72);max-width:680px;margin:22px auto 0}
+.final .cta-note{color:rgba(246,240,230,.5)}
+footer{padding:36px 20px 120px;text-align:center;font-size:13px;color:var(--ink-3);background:var(--night);border-top:1px solid var(--night-line)}
+footer p{max-width:720px;margin:0 auto}
+@media (min-width:721px){footer{padding-bottom:40px}}
+
+/* ============ Sticky mobile CTA ============ */
+.sticky{
+  position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;
+  display:none;align-items:center;gap:12px;padding:10px 10px 10px 18px;border-radius:999px;
+  background:rgba(23,20,15,.92);backdrop-filter:blur(12px);color:#fff;
+  box-shadow:0 20px 40px -12px rgba(0,0,0,.45);
+  transform:translateY(140%);transition:transform .45s var(--ease)
+}
+.sticky.show{transform:none}
+.sticky .t{flex:1;font-size:13px;line-height:1.3}
+.sticky .t b{display:block;font-size:15px}
+.sticky .btn{--h:46px;width:auto;padding:0 18px;font-size:13px}
+@media (max-width:720px){.sticky{display:flex}}
+
+/* ============ Reveal ============ */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2.5L4.5 13.5H12L11 21.5l8.5-11H12z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.8v14.4c0 .8.9 1.3 1.6.9l11.3-7.2c.6-.4.6-1.4 0-1.8L8.6 3.9C7.9 3.5 7 4 7 4.8z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-9 9"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.8 8.2l-2.2 5.4-5.4 2.2 2.2-5.4z"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5V20h16V9.5"/><path d="M2.8 9.5L5 4h14l2.2 5.5a3 3 0 01-5.6 1.2 3 3 0 01-5.2 0 3 3 0 01-5.2 0 3 3 0 01-2.4-1.2z"/><path d="M15 20v-4.5a1.5 1.5 0 00-1.5-1.5h-3A1.5 1.5 0 009 15.5V20"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 16l4-5 3.5 3L19 7"/><path d="M15 7h4v4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12"/><path d="M12 8.5c-1.5-3.5-5.5-4-5.5-1.5 0 1.5 2.5 1.5 5.5 1.5zM12 8.5c1.5-3.5 5.5-4 5.5-1.5 0 1.5-2.5 1.5-5.5 1.5z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></symbol>
+  </defs>
+</svg>
+
+<!-- ================= 1ª DOBRA ================= -->
+<header class="hero">
+  <div class="wrap center">
+    <div class="brand rv"><span class="mark">L</span>Lia <small>· Protocolo Digital 7 Dias</small></div>
+    <span class="eyebrow center rv">Aula exclusiva</span>
+    <h1 class="rv">Como transformar o seu conhecimento em um <span class="serif hl">ebook de vendas automáticas</span> usando uma Inteligência Artificial pré-treinada — sem gravar aulas e sem criar conteúdo.</h1>
+    <p class="lead rv">Conheça a “Lia”. Que foi desenhada para extrair a sua expertise, escrever sua página do zero e estruturar <strong>TODA</strong> a sua campanha de vendas.</p>
+
+    <div class="vsl rv" id="vsl">
+      <!-- MINI-VSL: cole aqui o embed do vídeo (ex.: VTurb) no lugar do placeholder abaixo -->
+      <div class="ph"><div><div class="play"><svg><use href="#i-play"/></svg></div>Mini-VSL</div></div>
+    </div>
+
+    <div class="hero-copy rv">
+      <p>Construa uma nova fonte de renda previsível em <strong>menos de 7 dias</strong>, enquanto você continua faturando na sua profissão.</p>
+      <p>Nessa aula você vai descobrir como usar a Lia na prática e criar o seu infoproduto que vende todos os dias sem precisar aparecer no Instagram.</p>
+    </div>
+
+    <div class="cta-row rv">
+      <a class="btn" href="#oferta">Quero vendas automáticas <svg><use href="#i-arrow"/></svg></a>
+      <div class="cta-note">
+        <span><svg><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+        <span><svg><use href="#i-bolt"/></svg>Acesso imediato</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 2ª DOBRA ================= -->
+<section class="myth">
+  <div class="wrap center">
+    <span class="eyebrow center rv">A verdade que ninguém te conta</span>
+    <h2 class="rv">Os gurus do marketing mentiram pra você: você <span class="serif hl">não precisa</span> criar conteúdo ou fazer dancinhas no Instagram para transformar o seu diploma em um ativo digital que vende sem parar…</h2>
+    <p class="lead rv" style="margin-top:22px">Na verdade, você só precisa de 3 pilares:</p>
+
+    <div class="pillars" style="text-align:left">
+      <article class="pillar rv">
+        <span class="n">01</span>
+        <h3>O Mapa do Desejo Inconsciente</h3>
+        <p>Você precisa identificar primeiro o DESEJO inconsciente do seu nicho, para vender o que eles REALMENTE querem comprar (e não o que você quer vender)… E a forma mais simples de fazer isso é respondendo uma curta pesquisa ao conversar com a “Lia”.</p>
+      </article>
+      <article class="pillar rv">
+        <span class="n">02</span>
+        <h3>A Formatação Premium</h3>
+        <p>Criar o seu infoproduto no formato ideal para que eles consigam consumir e ter resultados com o seu produto digital. A “Lia” conversa com você e ela cria SOZINHA o seu ebook do zero e você só dá alguns pitacos no serviço que ela fez…</p>
+      </article>
+      <article class="pillar rv">
+        <span class="n">03</span>
+        <h3>A Máquina de Vendas Automática</h3>
+        <p>Alguns falariam que você precisa ir nos stories ou no feed e virar um vendedor de curso… Já eu, digo que você não precisa nem aparecer no Instagram para vender o seu ebook. A “Lia” vai te entregar a sua página de vendas pronta para você só “clicar” e ativar!</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3ª DOBRA ================= -->
+<section class="proof">
+  <div class="wrap center">
+    <span class="eyebrow center rv">Resultados reais</span>
+    <h2 class="rv">Depoimentos de quem usa a Lia para fazer <span class="serif hl">vendas automáticas</span></h2>
+    <p class="lead rv" style="max-width:700px;margin:20px auto 0">Arquitetos, personais, nutricionistas, pediatras, eletricistas, entre várias outras profissões que transformaram seus conhecimentos em um ativo digital e estão vendendo todos os dias sem precisar criar conteúdo!</p>
+
+    <div class="grid">
+      <!-- Troque cada .ph por <img src="..." alt="Depoimento"> -->
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 1</div></div>
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 2</div></div>
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 3</div></div>
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 4</div></div>
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 5</div></div>
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 6</div></div>
+    </div>
+
+    <div class="cta-row rv">
+      <a class="btn" href="#oferta">Quero vender todos os dias <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4ª DOBRA ================= -->
+<section class="story">
+  <div class="wrap">
+    <div class="story-head center">
+      <span class="eyebrow center rv">O seu diploma é o seu maior ativo</span>
+      <h2 class="rv">Você já fez a parte mais difícil, <span class="serif hl">investiu anos</span> na sua formação.</h2>
+      <p class="lead rv">Agora, em poucos cliques, deixe a “Lia” transformar os seus anos de experiência em um infoproduto de vendas automáticas.</p>
+    </div>
+
+    <article class="letter rv">
+      <span class="eyebrow">Uma história real</span>
+      <h3 style="margin-top:12px">A lição dos 10 mil seguidores.</h3>
+      <p>Em 2019 eu e minha sócia, que é cabeleireira, fomos parar no SBT no programa The Noite.</p>
+      <p>Em menos de 53 minutos ganhamos 10 mil seguidores e poucos dias depois lançamos o nosso primeiro infoproduto e sabe o que aconteceu?</p>
+      <div class="stats">
+        <div class="stat"><b>53 min</b><span>em rede nacional</span></div>
+        <div class="stat"><b>+10 mil</b><span>seguidores novos</span></div>
+        <div class="stat zero"><b>0</b><span>vendas</span></div>
+      </div>
+      <p>Ninguém comprou! Foi ali que eu aprendi da pior forma que seguidores não pagam boletos.</p>
+      <p>Nós tínhamos a audiência, tínhamos passado em rede nacional, mas erramos no pilar mais importante de todos: <strong>O DESEJO.</strong></p>
+      <p class="pull">Foi exatamente para impedir que você cometa esse erro que a “Lia” foi treinada para executar 3 pilares à prova de falhas.</p>
+    </article>
+
+    <div class="features narrow" style="padding:0;max-width:860px">
+      <article class="feature rv">
+        <div class="ic"><svg><use href="#i-compass"/></svg></div>
+        <div>
+          <span class="tag">1 · O Desejo</span>
+          <h3>A Bússola do Mercado</h3>
+          <p>O maior erro é perder meses criando um produto que ninguém quer… E naquela época, a gente criou vários e vários infoprodutos mas nenhum deles realmente vendia bem…</p>
+          <p>Antes de você escrever uma única linha, a Lia vasculha a internet, olha pros seus concorrentes que já estão vendendo infoprodutos e te diz exatamente o que o seu público já está desesperado para comprar.</p>
+          <p>Ela encontra a “multidão faminta” para garantir as suas vendas e impede que você erre no que eu já errei no passado…</p>
+        </div>
+      </article>
+      <article class="feature rv">
+        <div class="ic"><svg><use href="#i-gear"/></svg></div>
+        <div>
+          <span class="tag">2 · O Formato</span>
+          <h3>A Execução Imediata</h3>
+          <p>Você não precisa sentar e escrever 100 páginas do zero. Você só bate um papo rápido com a Lia.</p>
+          <p>Ela absorve o seu conhecimento, organiza tudo de forma didática e te entrega um ebook formatado, com design premium e pronto para consumo rápido.</p>
+        </div>
+      </article>
+      <article class="feature rv">
+        <div class="ic"><svg><use href="#i-store"/></svg></div>
+        <div>
+          <span class="tag">3 · A Estratégia</span>
+          <h3>O Vendedor Automático</h3>
+          <p>Você não precisa gravar stories nem vender no 1 a 1.</p>
+          <p>A Lia escreve os textos da sua página de vendas na internet com uma estrutura de alta conversão.</p>
+          <p>Os clientes entram (através de anúncios que a Lia também cria) e compram sozinhos enquanto você está atendendo no consultório.</p>
+          <p><strong>Vendas acontecem diariamente sem que você precise criar conteúdo!</strong></p>
+        </div>
+      </article>
+    </div>
+
+    <div class="how">
+      <div class="center">
+        <span class="eyebrow center rv">Mas como as vendas acontecem de forma automática?</span>
+        <h2 class="rv">Existe um grande mito de que para vender o seu conhecimento você precisa passar <span class="serif hl">meses gravando vídeos</span> no Instagram.</h2>
+      </div>
+      <div class="narrow rv" style="margin-top:28px">
+        <p>Isso até é verdade se você for vender uma mentoria de 3 mil reais.</p>
+        <p>Mas o formato que a Lia constrói para você é diferente. É um material de alto valor, porém financeiramente acessível.</p>
+        <p>Quando você resolve uma dor urgente de forma direta e acessível, o cliente não precisa acompanhar a sua rotina no Instagram para tomar uma decisão.</p>
+        <p>As pessoas compram de quem elas não conhecem pela simples facilidade do processo. Isso te traz <strong>3 vantagens</strong> que nenhuma outra estratégia tem:</p>
+      </div>
+      <div class="adv">
+        <div class="rv"><svg><use href="#i-chart"/></svg><h3>Previsibilidade Financeira</h3><p>Passa a ter o controle diário das suas vendas, sabendo exatamente quanto o seu conhecimento te rende por dia e criando uma renda previsível mensal.</p></div>
+        <div class="rv"><svg><use href="#i-layers"/></svg><h3>Escala sem Esforço Adicional</h3><p>Diferente da sua agenda (onde para ganhar o dobro, você precisa trabalhar o dobro). Para vender o dobro do seu infoproduto basta ter mais pessoas visitando a sua página de vendas.</p></div>
+        <div class="rv"><svg><use href="#i-map"/></svg><h3>Alcance Nacional</h3><p>Ao contrário do seu atendimento físico, o seu infoproduto pode ser vendido para o Brasil todo, a qualquer hora e em qualquer dia!</p></div>
+      </div>
+      <p class="bridge rv">E para que você consiga fazer isso dentro dos próximos 7 dias, seguindo um método prático e rápido, eu juntei tudo e montei o <span class="serif hl" style="font-size:1.15em">Protocolo Digital 7 Dias!</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5ª DOBRA ================= -->
+<section class="protocol">
+  <div class="wrap center">
+    <span class="eyebrow center light rv">Protocolo Digital 7 Dias</span>
+    <h2 class="rv">O passo a passo completo de como usar a Lia para lançar o seu ebook e passar a <span class="serif" style="color:var(--orange-2)">vender todos os dias</span> sem criar conteúdo!</h2>
+    <p class="lead rv">Você não tem tempo, e eu entendo. Por isso a velocidade do Protocolo Digital será a sua maior vantagem. A “Lia” é liberada desde o primeiro dia e você tem aulas curtas e práticas ensinando a usá-la. Tudo liberado desde o ato da sua inscrição para você aplicar de forma rápida e ter resultados como esses:</p>
+    <div class="awards">
+      <!-- Troque por fotos das placas -->
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Placa 1 milhão · Kiwify</div></div>
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Placa 1 milhão · Pay</div></div>
+      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Placa 1 milhão · VTurb</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6ª DOBRA — OFERTA ================= -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow center rv">Tudo pronto para você</span>
+      <h2 class="rv">Veja tudo o que você vai receber <span class="serif hl">PRONTO</span> no Protocolo Digital 7 Dias:</h2>
+    </div>
+
+    <div class="offer-grid">
+      <div>
+        <div class="stack rv">
+          <div class="item"><span class="ck"><svg><use href="#i-check"/></svg></span><div><h3>Acesso à Lia desde o primeiro dia</h3></div></div>
+          <div class="item"><span class="ck"><svg><use href="#i-check"/></svg></span><div><h3>O Mapa do Desejo Inconsciente</h3><p>Os “dois cliques” para usar a Lia para identificar o desejo do seu público.</p></div></div>
+          <div class="item"><span class="ck"><svg><use href="#i-check"/></svg></span><div><h3>A Formatação Premium</h3><p>Passo a passo prático para montar o seu ebook no formato ideal para consumo.</p></div></div>
+          <div class="item"><span class="ck"><svg><use href="#i-check"/></svg></span><div><h3>A Máquina de Vendas Automática</h3><p>A estrutura pronta gerada pela Lia, para vender o seu infoproduto de forma automática.</p></div></div>
+          <div class="item"><span class="ck"><svg><use href="#i-check"/></svg></span><div><h3>Suporte VIP 7 dias por semana via WhatsApp</h3><p>Travou em algum clique? Mande texto, áudio, foto ou vídeo direto para a nossa equipe. Você nunca estará sozinho na implementação.</p></div></div>
+          <div class="item"><span class="ck"><svg><use href="#i-check"/></svg></span><div><h3>1 Sessão de Mentoria ao Vivo por mês</h3><p>Uma call mensal diretamente comigo (Lucas Nakagawa) para tirar as suas dúvidas estratégicas e alinhar o seu negócio.</p></div></div>
+        </div>
+
+        <p class="value-line rv">Tudo isso poderia valer facilmente <strong>R$ 1.000,00</strong>… E ainda vou te dar mais 2 bônus:</p>
+
+        <div class="bonus-wrap">
+          <div class="bonus rv">
+            <span class="gift"><svg><use href="#i-gift"/></svg></span>
+            <div>
+              <small>Bônus 1</small>
+              <h3>O Multiplicador Invisível</h3>
+              <div class="price"><s>De R$ 97,00</s> por <b>R$ 0</b></div>
+              <p>Uma estratégia tão simples e rápida para aumentar as suas vendas em até 2x que até parece que você está trapaceando.</p>
+            </div>
+          </div>
+          <div class="bonus rv">
+            <span class="gift"><svg><use href="#i-gift"/></svg></span>
+            <div>
+              <small>Bônus 2</small>
+              <h3>Lucro com Metade do Esforço</h3>
+              <div class="price"><s>De R$ 147,00</s> por <b>R$ 0</b></div>
+              <p>O ajuste fino para aumentar a margem de lucro do seu infoproduto sem trabalhar um minuto a mais. (Esta aula era restrita apenas aos meus clientes de consultoria, mas será sua de presente se você comprar ainda hoje, <b class="js-today"></b>.)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="price-card rv">
+        <span class="badge"><i></i>Black Friday Antecipada · 83% OFF</span>
+        <p class="anchor">Somando tudo poderia vender facilmente por <s>R$ 1.244,00</s></p>
+        <p class="installments">De R$ 1.244,00 por apenas</p>
+        <div class="big"><small>12x</small><small style="margin-left:4px">R$</small><strong>20</strong></div>
+        <p class="cash">ou <b>R$ 197</b> à vista</p>
+        <a class="btn block js-checkout" href="#">Quero vender todos os dias <svg><use href="#i-arrow"/></svg></a>
+        <p class="today">Condição válida hoje, <b class="js-today"></b></p>
+        <div class="secure">
+          <span><svg><use href="#i-lock"/></svg>Compra segura</span>
+          <span><svg><use href="#i-shield"/></svg>Garantia 7 dias</span>
+          <span><svg><use href="#i-bolt"/></svg>Acesso imediato</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7ª DOBRA — GARANTIA ================= -->
+<section class="guarantee" style="padding-top:0">
+  <div class="wrap">
+    <div class="box rv">
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+          <circle cx="100" cy="100" r="98" fill="#FFEDE2"/>
+          <circle cx="100" cy="100" r="62" fill="#FF5B14"/>
+          <g class="ring"><text font-family="Inter Tight" font-size="11" font-weight="700" letter-spacing="2.4" fill="#C2410C"><textPath href="#circ">GARANTIA INCONDICIONAL · GARANTIA INCONDICIONAL ·</textPath></text></g>
+          <text x="100" y="104" text-anchor="middle" font-family="Inter Tight" font-weight="800" font-size="52" fill="#fff" letter-spacing="-2">7</text>
+          <text x="100" y="130" text-anchor="middle" font-family="Inter Tight" font-weight="700" font-size="13" fill="#fff" letter-spacing="2.5">DIAS</text>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow">Risco zero</span>
+        <h2>O Protocolo Digital 7 Dias tem garantia incondicional de 7 dias.</h2>
+        <p>Você pode LITERALMENTE acessar a Lia, montar o seu ebook, fazer sua primeira venda e se mesmo assim você não ficar satisfeito, basta entrar em contato comigo e minha equipe dentro de 7 dias e solicitar o reembolso do valor investido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8ª DOBRA — LUCAS ================= -->
+<section class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <figure class="portrait rv">
+        <img src="/lp/lucas.png" alt="Lucas Nakagawa no Hotmart Day" loading="lazy" width="381" height="572">
+      </figure>
+      <div class="rv">
+        <span class="eyebrow">Quem vai te mostrar o caminho</span>
+        <h2>Lucas <span class="serif hl">Nakagawa</span></h2>
+        <p class="role">10 anos nos bastidores de produtos digitais</p>
+        <p>Depois de 10 anos atrás das câmeras, cuidando dos produtos digitais de cabeleireiras, personais, nutricionistas, pediatras, especialistas em dólar e tocar projetos de múltiplos 8 dígitos de faturamento.</p>
+        <p>Resolvi trazer algo pro mundo que eu já usava há alguns meses: a “Lia”.</p>
+        <p>Com a Lia eu melhorei a minha assertividade e vendi mais e mais rápido os infoprodutos das minhas especialistas parceiras.</p>
+        <p>Foi dessa forma que eu consegui bater as premiações de grandes empresas como Kiwify e Hotmart e ganhar viagens com tudo pago dessas plataformas.</p>
+        <p>Agora, reuni tudo sobre a Lia dentro do Protocolo Digital 7 Dias de uma forma prática e didática e você pode ser o próximo profissional que irá divulgar para o Brasil todo o seu excelente método!</p>
+        <div class="creds">
+          <span class="chip"><svg><use href="#i-spark"/></svg>Projetos de múltiplos 8 dígitos</span>
+          <span class="chip"><svg><use href="#i-spark"/></svg>Premiado por Kiwify e Hotmart</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9ª DOBRA — FAQ ================= -->
+<section class="faq">
+  <div class="narrow">
+    <div class="center">
+      <span class="eyebrow center rv">Dúvidas frequentes</span>
+      <h2 class="rv">Ficou com alguma <span class="serif hl">dúvida?</span></h2>
+    </div>
+    <div class="faq-list rv">
+      <details>
+        <summary>Eu não entendo nada de tecnologia. Vou conseguir?<span class="pm"></span></summary>
+        <div class="faq-body"><p>Vai. Você usa a Lia conversando com ela, como num bate-papo, e as aulas do Protocolo são curtas e mostram cada clique. Se travar em algum ponto, é só chamar o suporte no WhatsApp.</p></div>
+      </details>
+      <details>
+        <summary>Como eu recebo o acesso?<span class="pm"></span></summary>
+        <div class="faq-body"><p>Assim que o pagamento for aprovado, você recebe no seu e-mail o acesso à área de membros da Hotmart, com tudo liberado.</p></div>
+      </details>
+      <details>
+        <summary>Eu não tenho seguidores. Funciona mesmo assim?<span class="pm"></span></summary>
+        <div class="faq-body"><p>Funciona. Se você olhar meu Instagram hoje, tem menos de 100 seguidores, e mesmo assim eu vendo todos os dias.</p><p>Porque o que faz vender não é o número de seguidores, é ter o produto certo, no formato certo e com a estratégia certa. E é exatamente isso que você vai aprender.</p></div>
+      </details>
+      <details>
+        <summary>Funciona pra minha área?<span class="pm"></span></summary>
+        <div class="faq-body"><p>Eu já trabalhei com cabeleireira, nutricionista, personal, médico, pediatra, engenheiro, eletricista, especialista em sono de bebê…</p><p>Se você tem conhecimento e resolve um problema real das pessoas, existe alguém querendo comprar isso. A Lia vai te ajudar justamente a descobrir o que é.</p></div>
+      </details>
+      <details>
+        <summary>Quanto tempo por dia eu preciso dedicar?<span class="pm"></span></summary>
+        <div class="faq-body"><p>27 minutinhos por dia, durante 7 dias, é o suficiente.</p><p>O Protocolo foi pensado para quem tem agenda cheia, por isso ele é curto e direto ao ponto.</p></div>
+      </details>
+      <details>
+        <summary>Preciso pagar alguma ferramenta extra pra usar a inteligência artificial?<span class="pm"></span></summary>
+        <div class="faq-body"><p>Não, você não vai precisar pagar nenhum centavo a mais.</p></div>
+      </details>
+      <details>
+        <summary>Por quanto tempo eu tenho acesso?<span class="pm"></span></summary>
+        <div class="faq-body"><p>O seu acesso é vitalício. Você pode assistir quantas vezes quiser, no seu ritmo.</p></div>
+      </details>
+      <details>
+        <summary>Como funciona a garantia?<span class="pm"></span></summary>
+        <div class="faq-body"><p>Simples: se em 7 dias aplicando o método o seu produto não estiver no ar, ou se por qualquer motivo você não gostar, é só pedir e você recebe 100% do seu dinheiro de volta. Sem pegadinha.</p></div>
+      </details>
+    </div>
+
+    <div class="closing rv">
+      <p><strong>Então agora é com você.</strong></p>
+      <p>Clica no botão aqui embaixo e vamos colocar o seu primeiro produto digital no ar.</p>
+      <p>Daqui a 7 dias, quero receber a sua mensagem contando que ele está pronto.</p>
+      <p>Te vejo lá dentro. Um abraço!</p>
+      <p class="sig">Lucas Nakagawa</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10ª DOBRA — CTA FINAL ================= -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow center light rv">Comece hoje</span>
+    <h2 class="rv">Transforme o seu conhecimento em um <span class="serif" style="color:var(--orange-2)">ativo digital</span> que rende todo mês!</h2>
+    <p class="lead rv">Aprenda agora a como usar a Lia para criar um infoproduto que vende todos os dias de forma automática, sem que você precise atender seus clientes/pacientes um por um e sem que você precise criar conteúdo no Instagram!</p>
+    <p class="lead rv" style="margin-top:14px">Transforme o seu currículo em um produto digital que rende de forma previsível todo mês sem depender da sua agenda!</p>
+    <div class="cta-row rv">
+      <a class="btn js-checkout" href="#">Quero criar meu produto que vende todo dia! <svg><use href="#i-arrow"/></svg></a>
+      <div class="cta-note">
+        <span><svg><use href="#i-lock"/></svg>Compra segura</span>
+        <span><svg><use href="#i-shield"/></svg>Garantia incondicional de 7 dias</span>
+        <span><svg><use href="#i-bolt"/></svg>Acesso vitalício</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span class="js-year">2026</span> Protocolo Digital 7 Dias · Lucas Nakagawa. Todos os direitos reservados.</p>
+</footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <div class="t"><b>12x de R$ 20</b>ou R$ 197 à vista</div>
+  <a class="btn js-checkout" href="#" tabindex="-1">Quero agora</a>
+</div>
+
+<script>
+/* ===== Configuração: cole aqui o link do checkout ===== */
+var CHECKOUT_URL = "#oferta";
+
+(function(){
+  // Link de checkout (mantém UTMs da URL atual)
+  var qs = location.search.replace(/^\?/,"");
+  document.querySelectorAll(".js-checkout").forEach(function(a){
+    var url = CHECKOUT_URL;
+    if (qs && /^https?:/.test(url)) url += (url.indexOf("?")>-1?"&":"?") + qs;
+    a.href = url;
+    if (/^https?:/.test(url)) a.addEventListener("click",function(){ try{fbq("track","InitiateCheckout")}catch(e){} });
+  });
+
+  // Data de hoje
+  var d = new Date();
+  var txt = d.toLocaleDateString("pt-BR",{day:"2-digit",month:"long"});
+  document.querySelectorAll(".js-today").forEach(function(el){ el.textContent = txt; });
+  document.querySelectorAll(".js-year").forEach(function(el){ el.textContent = d.getFullYear(); });
+
+  // Reveal on scroll
+  var els = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add("in"); }); }
+
+  // Sticky CTA (mobile): aparece depois do hero, some na oferta/final
+  var sticky = document.getElementById("sticky");
+  var hero = document.querySelector(".hero");
+  var hide = [document.getElementById("oferta"), document.querySelector(".final")];
+  var vis = {hero:true, hide:false};
+  var upd = function(){ sticky.classList.toggle("show", !vis.hero && !vis.hide); };
+  if ("IntersectionObserver" in window){
+    new IntersectionObserver(function(e){ vis.hero = e[0].isIntersecting; upd(); }).observe(hero);
+    var hv = new Map();
+    var ho = new IntersectionObserver(function(es){
+      es.forEach(function(e){ hv.set(e.target, e.isIntersecting); });
+      vis.hide = Array.from(hv.values()).some(Boolean); upd();
+    },{rootMargin:"0px 0px -30% 0px"});
+    hide.forEach(function(el){ if(el) ho.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
