@@ -171,10 +171,12 @@ strong{font-weight:650;color:var(--ink)}
 @media (max-width:860px){.pillars{grid-template-columns:1fr}}
 
 /* ============ Testimonials ============ */
-.proof .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-.proof .ph{aspect-ratio:4/5}
+.shots{columns:3;column-gap:16px;margin-top:48px;text-align:left}
+.shot{break-inside:avoid;margin:0 0 16px;border-radius:var(--r-md);overflow:hidden;background:var(--card);box-shadow:0 0 0 1px var(--line),var(--shadow-1);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.shot:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line),var(--shadow-2)}
+.shot img{width:100%;height:auto}
 .professions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
-@media (max-width:860px){.proof .grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){.shots{columns:2;column-gap:12px}.shot{margin-bottom:12px}}
 
 /* ============ Story (4ª dobra) ============ */
 .story{background:var(--paper-2)}
@@ -231,8 +233,11 @@ strong{font-weight:650;color:var(--ink)}
 .protocol h2{max-width:840px;margin:18px auto 0;color:#fff}
 .protocol .lead{color:rgba(246,240,230,.72);max-width:680px;margin:22px auto 0}
 .awards{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
-.awards .ph{aspect-ratio:4/5;background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.14);color:rgba(246,240,230,.5)}
-@media (max-width:720px){.awards{grid-template-columns:1fr 1fr}.awards .ph:last-child{grid-column:1/-1;aspect-ratio:16/10}}
+.award{position:relative;aspect-ratio:3/4;border-radius:var(--r-md);overflow:hidden;box-shadow:0 0 0 1px var(--night-line),0 30px 60px -30px rgba(0,0,0,.7)}
+.award img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.award:hover img{transform:scale(1.04)}
+.award figcaption{position:absolute;left:12px;bottom:12px;padding:6px 11px;border-radius:999px;background:rgba(18,16,16,.72);backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em}
+@media (max-width:720px){.awards{grid-template-columns:1fr 1fr;gap:12px}.award:last-child{grid-column:1/-1;aspect-ratio:4/3}}
 
 /* ============ Oferta (6ª dobra) ============ */
 .offer h2{max-width:760px;margin:18px auto 0}
@@ -453,14 +458,12 @@ footer p{max-width:720px;margin:0 auto}
     <h2 class="rv">Depoimentos de quem usa a Lia para fazer <span class="serif hl">vendas automáticas</span></h2>
     <p class="lead rv" style="max-width:700px;margin:20px auto 0">Arquitetos, personais, nutricionistas, pediatras, eletricistas, entre várias outras profissões que transformaram seus conhecimentos em um ativo digital e estão vendendo todos os dias sem precisar criar conteúdo!</p>
 
-    <div class="grid">
-      <!-- Troque cada .ph por <img src="..." alt="Depoimento"> -->
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 1</div></div>
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 2</div></div>
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 3</div></div>
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 4</div></div>
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 5</div></div>
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Depoimento 6</div></div>
+    <div class="shots">
+      <figure class="shot rv"><img src="/lp/dep1.webp" alt="Depoimento de aluno 1" loading="lazy"></figure>
+      <figure class="shot rv"><img src="/lp/dep2.webp" alt="Depoimento de aluno 2" loading="lazy"></figure>
+      <figure class="shot rv"><img src="/lp/dep3.webp" alt="Depoimento de aluno 3" loading="lazy"></figure>
+      <figure class="shot rv"><img src="/lp/dep4.webp" alt="Depoimento de aluno 4" loading="lazy"></figure>
+      <figure class="shot rv"><img src="/lp/dep5.webp" alt="Depoimento de aluno 5" loading="lazy"></figure>
     </div>
 
     <div class="cta-row rv">
@@ -554,10 +557,9 @@ footer p{max-width:720px;margin:0 auto}
     <h2 class="rv">O passo a passo completo de como usar a Lia para lançar o seu ebook e passar a <span class="serif" style="color:var(--orange-2)">vender todos os dias</span> sem criar conteúdo!</h2>
     <p class="lead rv">Você não tem tempo, e eu entendo. Por isso a velocidade do Protocolo Digital será a sua maior vantagem. A “Lia” é liberada desde o primeiro dia e você tem aulas curtas e práticas ensinando a usá-la. Tudo liberado desde o ato da sua inscrição para você aplicar de forma rápida e ter resultados como esses:</p>
     <div class="awards">
-      <!-- Troque por fotos das placas -->
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Placa 1 milhão · Kiwify</div></div>
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Placa 1 milhão · Pay</div></div>
-      <div class="ph rv"><div><svg><use href="#i-image"/></svg>Placa 1 milhão · VTurb</div></div>
+      <figure class="award rv"><img src="/lp/placa-kiwify.webp" alt="Premiação Kiwify" loading="lazy"><figcaption>Kiwify</figcaption></figure>
+      <figure class="award rv"><img src="/lp/placa-pay.webp" alt="Placa de 1 milhão de plays na VTurb" loading="lazy"><figcaption>VTurb · 1 milhão</figcaption></figure>
+      <figure class="award rv"><img src="/lp/placa-vturb.webp" alt="Placa Payt" loading="lazy"><figcaption>Payt</figcaption></figure>
     </div>
   </div>
 </section>
@@ -651,7 +653,7 @@ footer p{max-width:720px;margin:0 auto}
   <div class="wrap">
     <div class="about-grid">
       <figure class="portrait rv">
-        <img src="/lp/lucas.png" alt="Lucas Nakagawa no Hotmart Day" loading="lazy" width="381" height="572">
+        <img src="/lp/lucas.webp" alt="Lucas Nakagawa no Hotmart Day" loading="lazy" width="381" height="572">
       </figure>
       <div class="rv">
         <span class="eyebrow">Quem vai te mostrar o caminho</span>
